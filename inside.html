@@ -12,6 +12,13 @@
             background: white;
         }
 
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            justify-content: end;
+            align-items: top;
+        }
+
         /*Basic reset*/
         * {
             margin: 0;
@@ -21,17 +28,20 @@
 
         #accordian {
             /*background: #004050;*/
-            width: 250px;
+            width: 500px;
 
-            color: white;
+            color: rgb(255, 255, 255);
             /*Some cool shadow and glow effect*/
             /*box-shadow: 
 		0 5px 15px 1px rgba(0, 0, 0, 0.6), 
 		0 0 200px 1px rgba(255, 255, 255, 0.5);*/
-            height: 271px;
+            height: 100vh;
             overflow-y: auto;
         }
-
+        #dep{
+            padding-left: 20px;
+            color: black;
+        }
         /*heading styles*/
         #accordian h3 {
             font-size: 12px;
@@ -112,53 +122,66 @@
 
 <body>
 
-    <div id="accordian">
-        <ul>
-            <li>
-                <h3>Dashboard</h3>
-                <ul>
-                    <li><a href="#">Reports</a></li>
-                    <li><a href="#">Search</a></li>
-                    <li><a href="#">Graphs</a></li>
-                    <li><a href="#">Settings</a></li>
-                </ul>
-            </li>
-            <!-- we will keep this LI open by default -->
-            <li class="active">
-                <h3>Tasks</h3>
-                <ul>
-                    <li><a href="#">Today's tasks</a></li>
-                    <li><a href="#">Urgent</a></li>
-                    <li><a href="#">Overdues</a></li>
-                    <li><a href="#">Recurring</a></li>
-                    <li><a href="#">Settings</a></li>
-                </ul>
-            </li>
-            <li>
-                <h3>Calendar</h3>
-                <ul>
-                    <li><a href="#">Current Month</a></li>
-                    <li><a href="#">Current Week</a></li>
-                    <li><a href="#">Previous Month</a></li>
-                    <li><a href="#">Previous Week</a></li>
-                    <li><a href="#">Next Month</a></li>
-                    <li><a href="#">Next Week</a></li>
-                    <li><a href="#">Team Calendar</a></li>
-                    <li><a href="#">Private Calendar</a></li>
-                    <li><a href="#">Settings</a></li>
-                </ul>
-            </li>
-            <li>
-                <h3>Favourites</h3>
-                <ul>
-                    <li><a href="#">Global favs</a></li>
-                    <li><a href="#">My favs</a></li>
-                    <li><a href="#">Team favs</a></li>
-                    <li><a href="#">Settings</a></li>
-                </ul>
-            </li>
-        </ul>
+    <div class="wrapper">
+        <div id="accordian">
+            <ul>
+                <li>
+                    <h3>Dashboard</h3>
+                    <ul>
+                        <li><div id="dep"><p>Idc is the place to come when you want to hire designers who are very sharp and innovative in their thinking.
+    
+                        </p> </div></li>
+                        <li><a href="#">Search</a></li>
+                        <li><a href="#">Graphs</a></li>
+                        <li><a href="#">Settings</a></li>
+                    </ul>
+                </li>
+                <!-- we will keep this LI open by default -->
+                <li class="active">
+                    <h3>Tasks</h3>
+                    <ul>
+                        <li><a href="#">Today's tasks</a></li>
+                        <li><a href="#">Urgent</a></li>
+                        <li><a href="#">Overdues</a></li>
+                        <li><a href="#">Recurring</a></li>
+                        <li><a href="#">Settings</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Calendar</h3>
+                    <ul>
+                        <li><a href="#">Current Month</a></li>
+                        <li><a href="#">Current Week</a></li>
+                        <li><a href="#">Previous Month</a></li>
+                        <li><a href="#">Previous Week</a></li>
+                        <li><a href="#">Next Month</a></li>
+                        <li><a href="#">Next Week</a></li>
+                        <li><a href="#">Team Calendar</a></li>
+                        <li><a href="#">Private Calendar</a></li>
+                        <li><a href="#">Settings</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Favourites</h3>
+                    <ul>
+                        <li><a href="#">Global favs</a></li>
+                        <li><a href="#">My favs</a></li>
+                        <li><a href="#">Team favs</a></li>
+                        <li><a href="#">Settings</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    <div><div style="float: right"><p><strong>Pascal Mario Kmelang Pathaw(186330013)
+    
+    </strong>
+    <br>
+    <strong>Mdes</strong> | Mobility & vehicle design | CPI: <strong>10.0</strong> </p></div></div>
     </div>
+
+
+    
 
 
     <script>
@@ -166,7 +189,10 @@
         $(document).ready(function () {
             $("#accordian h3").click(function () {
                 //slide up all the link lists
-                $("#accordian ul ul").slideUp();
+              if($(this).next().is(":visible"))  {
+                  return false;
+                  }
+                  $("#accordian ul ul").slideUp();
                 //slide down the link list below the h3 clicked - only if its closed
                 if (!$(this).next().is(":visible")) {
                     $(this).next().slideDown();

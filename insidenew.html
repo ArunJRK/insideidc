@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+
+
+body {
+            font-family: 'Mukta', sans-serif;
+
+        }
+
+        .wrapper {
+            display: grid;
+           margin-top: 100px;
+            grid-template-columns: 1.3fr 1fr;
+            grid-gap: 0em;
+            grid-auto-rows: minmax(100px, auto);
+            justify-content: end;
+            align-items: center;
+        }
+
+       
+        p {
+            font-size: 22px;
+        }
+
+        h1 {
+            font-size: 78px;
+            font-weight: 800;
+            line-height: 0;
+        }
+
+        h2 {
+            font-size: 52px;
+            font-weight: 500;
+            color: #D5D5D5;
+            line-height: 0.5;
+        }
+
+        #rectangle {
+            box-sizing: border-box;
+            width: 200px;
+            height: 200px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        @media (max-width: 1000px) {
+            
+        }
+
+
+
+
+         div #top {
+            width: 100vw;
+
+            padding-left: 10vw;
+            height: 40px;
+
+            background-color: #f3f3f3;
+
+        }
+
+        #top > a {
+            text-decoration: none;
+            font-family: Roboto;
+            font-size: 30px;
+        }
+
+        #discipline{
+            z-index: 100;
+        }
+
+        #bgcolor> p {
+            font-family: roboto;
+            font-weight: 900;
+            font-size: 64px;
+            
+            color: rgb(0, 90, 226);
+            
+            display: block;
+            padding: 50px 0px 0px 200px
+        }
+
+      
+    </style>
+</head>
+
+<body>
+    <div id="top">
+        <a href="index.html">Home</a>
+    </div>
+    <br>
+    <div class="wrapper">
+        <div id="discipline">
+            
+        </div>
+        <div id="headimg" style="z-index:100;">
+            <img src="Images/B.Des.png" style=" margin-top: -30px;">
+        </div>
+        <div id="bgcolor" style="background-color:aquamarine; height: 300px; margin-top: -200px; z-index: 0;">
+                <p>Bachelor's of Design</p>
+        </div>
+        <div id="bgcolor" style="background-color:aquamarine; height: 300px; margin-top: -200px; z-index: 0;">
+
+            </div>
+    </div>
+
+</body>
+
+</html>
